@@ -1,0 +1,40 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  customruntime:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: helloworld
+    node:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: custom
+        CodeUri: ./
+        MemorySize: 128
+        Timeout: 60
+        InstanceConcurrency: 1
+        EnvironmentVariables:
+          LD_LIBRARY_PATH: >-
+            /mnt/nas/root/usr/lib:/mnt/nas/root/usr/lib/x86_64-linux-gnu:/mnt/nas/root/lib/x86_64-linux-gnu:/mnt/nas/root/usr/lib64
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods:
+              - HEAD
+              - POST
+              - PUT
+              - GET
+              - DELETE
+  Domain:
+    Type: Aliyun::Serverless::CustomDomain
+    Properties:
+      DomainName: Auto
+      Protocol: HTTP
+      RouteConfig:
+        Routes:
+          "/*":
+            ServiceName: customruntime
+            FunctionName: node
