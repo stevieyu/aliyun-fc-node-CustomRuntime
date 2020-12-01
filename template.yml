@@ -5,6 +5,7 @@ Resources:
     Type: 'Aliyun::Serverless::Service'
     Properties:
       Description: helloworld
+      NasConfig: Auto
     node:
       Type: 'Aliyun::Serverless::Function'
       Properties:
@@ -29,12 +30,12 @@ Resources:
               - GET
               - DELETE
   Domain:
-    Type: Aliyun::Serverless::CustomDomain
+    Type: 'Aliyun::Serverless::CustomDomain'
     Properties:
       DomainName: Auto
       Protocol: HTTP
       RouteConfig:
         Routes:
-          "/*":
+          /*:
             ServiceName: customruntime
             FunctionName: node
