@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "pouchdb-server -o 0.0.0.0 -p 9000 -m -d ./tmp/pouchdb-server/ -n true"
+    "start": "pouchdb-server -o 0.0.0.0 -p 9000 -d ./tmp/pouchdb-server/ -n true --sqlite"
   },
   "dependencies": {
     "pouchdb-server": "^4.2.0"
