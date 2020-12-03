@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /mnt/auto/pouchdb-demo
+cd ./pouchdb-demo
 npm start
 

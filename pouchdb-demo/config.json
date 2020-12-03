@@ -1,7 +1,7 @@
 {
   "couchdb": {
     "uuid": "bdddc77d-fe51-43bc-ac22-90c80302fcec",
-    "database_dir": "./database"
+    "database_dir": "/tmp/db"
   },
   "couch_httpd_auth": {
     "allow_persistent_cookies": true
@@ -11,7 +11,8 @@
     "bind_address": "0.0.0.0",
     "port": 9000
   },
-  "pouchdb_server": {
-    "sqlite": true
+  "pouchdb_server": {},
+  "log": {
+    "file": "/tmp/log.txt"
   }
 }

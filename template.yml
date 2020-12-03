@@ -5,7 +5,6 @@ Resources:
     Type: 'Aliyun::Serverless::Service'
     Properties:
       Description: helloworld
-      NasConfig: Auto
     node:
       Type: 'Aliyun::Serverless::Function'
       Properties:
