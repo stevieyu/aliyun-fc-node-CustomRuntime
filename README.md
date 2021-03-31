@@ -2,4 +2,6 @@
 
 ```sh
 fun install
+
+npm prune --production
 ```

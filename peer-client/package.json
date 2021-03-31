@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "parcel --no-cache src/index.html",
+    "watch": "parcel watch --no-hmr --no-cache src/index.html",
+    "build": "parcel build --no-cache src/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.0.0-nightly.474"
+  }
+}

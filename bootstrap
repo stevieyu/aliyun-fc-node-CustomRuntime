@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#cd ./peer-serve
+#npm start
+
 cd ./pouchdb-demo
 npm start
+
+#node http.js
 
