@@ -47,7 +47,7 @@ const mp = multipeer()
 	})
 
 app.use(bodyParser.json());
-// app.use(require('cors')());
+app.use(require('cors')());
 
 // app.get('/*', staticServe(path.join(__dirname, 'dist')));
 
